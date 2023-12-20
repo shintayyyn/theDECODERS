@@ -1,0 +1,84 @@
+
+.exitbtn button:hover{
+    background-color: rgb(59, 56, 56);
+    color: gold;
+}
+
+
+body {
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+margin: 0;
+background-color: #f2f2f2;
+}
+
+.container {
+text-align: center;
+}
+
+#target {
+width: 100px;
+height: 100px;
+background-color: #3498db;
+border-radius: 50%;
+margin: 20px auto;
+cursor: pointer;
+}
+
+button {
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+background-color: #2ecc71;
+color: #ffffff;
+border: none;
+border-radius: 5px;
+outline: none;
+}
+
+button:hover {
+background-color: aqua;
+}
+
+button::after {
+transform: translate(2px); /* Fixed the typo */
+transform-origin: 25px 25px; /* Simplified the vendor-prefixed properties */
+}
+
+#result {
+font-size: 18px;
+font-weight: bold;
+color: #e74c3c;
+margin-top: 20px;
+}
+
+#countdown {
+font-size: 24px;
+margin-top: 10px;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 600px) {
+#target {
+width: 80px;
+height: 80px;
+margin: 10px auto;
+}
+
+button {
+padding: 8px 16px;
+font-size: 14px;
+}
+
+#result {
+font-size: 16px;
+margin-top: 15px;
+}
+
+#countdown {
+font-size: 20px;
+margin-top: 8px;
+}
+}

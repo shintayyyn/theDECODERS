@@ -1,0 +1,229 @@
+canvas {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  
+  }
+
+body {
+    position: relative;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+    margin: 0;
+    background-color: #2b2d2e;
+    z-index: 1;
+}
+
+#sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 60px);
+    grid-template-rows: repeat(9, 60px);
+    gap: 1px;
+    border: 2px solid #dfd9d9;
+    z-index: 1;
+    /* Border for the entire board */
+}
+
+.cell {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+    user-select: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    box-sizing: border-box;
+    background: rgba( 203, 198, 198, 0.4 );
+box-shadow: 0 8px 32px 0 rgba(114, 22, 130, 0.37);
+backdrop-filter: blur( 11.5px );
+-webkit-backdrop-filter: blur( 11.5px );
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+/* Add bold border for every 3rd column and row */
+.cell:nth-child(3n) {
+    border-right: 2px solid #e4e41d;
+}
+
+.cell:nth-child(n + 81) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+.cell:nth-child(19) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+.cell:nth-child(20) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+.cell:nth-child(21) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+.cell:nth-child(22) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+.cell:nth-child(23) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+.cell:nth-child(24) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+.cell:nth-child(25) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+.cell:nth-child(26) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+.cell:nth-child(27) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+.cell:nth-child(46) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+.cell:nth-child(47) {
+    border-bottom: 2px solid#e4e41d;
+}
+
+.cell:nth-child(48) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+.cell:nth-child(49) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+.cell:nth-child(50) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+.cell:nth-child(51) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+.cell:nth-child(52) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+.cell:nth-child(53) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+.cell:nth-child(54) {
+    border-bottom: 2px solid #e4e41d;
+}
+
+/* .cell:nth-child(n ) {
+    border-bottom: 2px solid #000;
+} */
+
+.given {
+    background-color: #eee;
+}
+
+.selected {
+background: #aaaaff;
+box-shadow:  5px 5px 9px #8080bf,
+             -5px -5px 9px #d5d5ff;
+}
+
+.input-cell {
+    background: #080624;
+    color: #e4e41d;
+}
+
+.input-cell:hover {
+    /* Light sky blue */
+    background: #59f3f0;
+box-shadow: inset 5px 5px 9px #5f8d97,
+            inset -5px -5px 9px #9eebfb;
+}
+
+.button-container {
+    margin-top: 20px;
+    text-align: center;
+    z-index: 2;
+    
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+
+}
+
+button:last-child {
+    margin-right: 0;
+}
+
+.header {
+    color: #e4e41d;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Modal styles */
+.modal {
+    z-index: 2;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    z-index: 2;
+    background-color: #fff;
+    padding: 20px;
+    /* border-radius: 5px;
+    box-shadow: 0 0 10px rgba(248, 237, 237, 0.3); */
+    background: rgba( 8, 6, 36, 0.55 );
+box-shadow: 0 8px 89px 0 #59f3f0;
+backdrop-filter: blur( 18.5px );
+-webkit-backdrop-filter: blur( 18.5px );
+border-radius: 10px;
+border: 1px solid rgba(119, 255, 109, 0.18);
+color: #e4e41d;
+    text-align: center;
+}
+
+.close-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: rgb(222, 222, 230);
+    color: #081643;
+    border: none;
+    border-radius: 3px;
+
+}
+.close-btn:hover{
+    background: #59f3f0;
+    box-shadow: inset 8px 8px 16px #4ed6d3,
+                inset -8px -8px 16px #64ffff;
+    color: #080413;
+}
